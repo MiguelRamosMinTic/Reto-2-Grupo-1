@@ -9,24 +9,20 @@
         <h2>Cliente Ajax de Peticion HTTP </h2>
         <fieldset style="width: 30%">
             <legend>Datos del Usuario</legend>
-            <table>
+            <table class="default">
                 <tr>
                     <th>ID:</th>
                     <td><input type="text" id="id" readonly ondblclick="soloLectura()"> </td>
                 </tr> 
             
                <tr>
-                   <th>NOMBE:</th>
+                   <th>NOMBRE:</th>
                    <td><input type="text" id="nombre"> </td>
                </tr> 
                <tr>
                     <th>VALOR: $</th>
                     <td><input type="number" id="valor"> </td>
-                </tr> 
-                <tr>
-                    <th>FECHA:</th>
-                    <td><input type="date" id="fecha"> </td>
-                </tr> 
+                </tr>  
                 <tr>
                     <th>DESCRIPCION:</th>
                     <td><input type="TEXT" id="desc"> </td>
@@ -42,7 +38,6 @@
                         <input type="button" value="ELIMINAR" onclick="eliminar()"> 
                     </td>
                 </tr> 
-                
             </table>
         </fieldset>
     </body>
