@@ -1,44 +1,77 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Cliente Ajax</title>
+        <title>CLIENT</title>
+        <style>table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        </style>
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="js/funciones.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h2>Cliente Ajax de Peticion HTTP </h2>
-        <fieldset style="width: 30%">
-            <legend>Datos del Usuario</legend>
-            <table class="default">
-                <tr>
-                    <th>ID:</th>
-                    <td><input type="text" id="id" readonly ondblclick="soloLectura()"> </td>
-                </tr> 
-            
-               <tr>
-                   <th>NOMBRE:</th>
-                   <td><input type="text" id="nombre"> </td>
-               </tr> 
-               <tr>
-                    <th>VALOR: $</th>
-                    <td><input type="number" id="valor"> </td>
-                </tr>  
-                <tr>
-                    <th>DESCRIPCION:</th>
-                    <td><input type="TEXT" id="desc"> </td>
-                </tr> 
-                <tr>
-                    <th>USUARIO:</th>
-                    <td><input type="TEXT" id="user"> </td>
-                </tr> 
-                <tr>
-                    <td colspan="2">
-                        <input type="button" value="GUARDAR" onclick="guardar()"> &nbsp;&nbsp;&nbsp;
-                        <input type="button" value="EDITAR" onclick="editar()"> &nbsp;&nbsp;&nbsp;
-                        <input type="button" value="ELIMINAR" onclick="eliminar()"> 
-                    </td>
-                </tr> 
+        <h1>CLIENT</h1>
+        <nav>
+        <a href="index.html">Room</a>
+        <a href="client.html">Client</a>
+        <a href="message.html">Message</a>
+        <a href="client.html">Refrescar</a>
+        <a href="https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcSHxThlxnFQzVRQmKBZCMDGhwfKRGXbmZvffpDxjzFLzHXkGBckGgWpRzWHzsrBfJZpFtRJM" target="_blank">Contacto</a>
+        <div class="animation start-home"></div>
+        </nav>
+
+        <h2 style="text-align: center; color: aliceblue;">INGRESO DATOS CLIENT</h2>
+        <hr>
+        <table class="default" style="margin: 0 auto; color: aliceblue;">
+            <tr>
+                <th>ID</th>
+                <td><input type="text" id="idClient"></td>
+            </tr>
+            <tr>
+                <th>NAME</th>
+                <td><input type="text" id="nameClient"></td>
+            </tr>
+            <tr>
+                <th>EMAIL</th>
+                <td><input type="text" id="emailClient"></td>
+            </tr>
+            <tr>
+                <th>AGE</th>
+                <td><input type="text" id="ageClient"></td>
+            </tr>
+            <tr>
+                <th style="text-align: center;"><input type="button" value="ENVIAR" onclick="guardarClient()"></th>
+                <td style="text-align: center;"><input type="button" value="ACTUALIZAR" onclick="editarClient()"></td>
+            </tr>
+        </table>
+        <hr>
+        
+        <h2 style="text-align: center; color: aliceblue;">BUSCAR POR ID</h2>
+        <table class="default" style="margin: 0 auto; color: aliceblue;">
+            <tr>
+                <th>ID</th>
+                <td><input type="text" id="idClient2"></td>
+            </tr>
+        </table>
+        <br>
+        <div id="resultadoClient" style="text-align: center;"></div>
+        <br>
+        <div style="text-align: center;"><button onclick="buscarPorIDClient($('#idClient2'))">BUSCAR</button></div>
+        <hr>
+
+        <div style="text-align: center;"><button onclick="consultarClient()">MOSTRAR LISTADO</button></div>
+        <br>
+        <div>
+            <table class="default" style="margin: 0 auto; color: aliceblue;">
+                <tbody id="miResultadoClient">
+
+                </tbody>
             </table>
-        </fieldset>
+        </div>
+        <hr>
+
     </body>
 </html>
