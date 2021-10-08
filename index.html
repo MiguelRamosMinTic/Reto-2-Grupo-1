@@ -2,11 +2,38 @@
 <html>
     <head>
         <title>ROOM</title>
+        <style>table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        </style>
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="js/funciones.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body >
+    <body>
+
+        <nav>
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+
+
+
         <h2 style="text-align: center;">INGRESO DATOS ROOM</h2>
         <hr>
         <table class="default" style="margin: 0 auto;">
@@ -31,13 +58,13 @@
                 <td><input type="text" id="descriptionBase"></td>
             </tr>
             <tr>
-                <th style="text-align: right;"><input type="button" value="ENVIAR" onclick="guardar()"></th>
+                <th style="text-align: center;"><input type="button" value="ENVIAR" onclick="guardar()"></th>
                 <td style="text-align: center;"><input type="button" value="ACTUALIZAR" onclick="editar()"></td>
             </tr>
         </table>
         <hr>
-
-        <h2 style="text-align: center;">ELIMINAR</h2>
+        
+        <h2 style="text-align: center;">BUSCAR POR ID</h2>
         <table class="default" style="margin: 0 auto;">
             <tr>
                 <th>ID</th>
@@ -45,28 +72,20 @@
             </tr>
         </table>
         <br>
-        <div style="text-align: center;"><button onclick="eliminar()">ELIMINAR</button></div>
-        <hr>
-        
-        <h2 style="text-align: center;">BUSCAR POR ID</h2>
-        <table class="default" style="margin: 0 auto;">
-            <tr>
-                <th>ID</th>
-                <td><input type="text" id="idBase"></td>
-            </tr>
-        </table>
-        <div id="resultado"></div>
+        <div id="resultado" style="text-align: center;"></div>
         <br>
-        <div style="text-align: center;"><button onclick="buscarPorID()">BUSCAR</button></div>
+        <div style="text-align: center;"><button onclick="buscarPorID($('#idBase2'))">BUSCAR</button></div>
         <hr>
 
-        <div id="id"></div>
-        <div id="room"></div>
-        <div id="stars"></div>
-        <div id="category_id"></div>
+        <div style="text-align: center;"><button onclick="consultar()">MOSTRAR LISTADO</button></div>
+        <br>
+        <div>
+            <table class="default" style="margin: 0 auto;">
+                <tbody id="miResultado">
 
-        <button onclick="consultar()">MOSTRAR TODO</button>
-        &nbsp;&nbsp;&nbsp;
-        <button onclick="buscarPorID($('#id'))">MOSTAR UNO</button>
+                </tbody>
+            </table>
+        </div>
+        <hr>
     </body>
 </html>
